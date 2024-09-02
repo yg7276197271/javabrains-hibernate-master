@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+          
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <property name="connection.url">jdbc:sqlserver://127.0.0.1:1433;databaseName=master</property>
+        <property name="connection.username">sa</property>
+        <property name="connection.password">YogJosJos@14</property>
+        
+        <property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
+        
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">5</property>
+        
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+        
+        <!-- Disable the second-level cache  -->
+     <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+        
+	 	  <!--<property name="hibernate.cache.use_second_level_cache">true</property>
+		<property name="hibernate.cache.use_query_cache">true</property> 
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+        <property name="net.sf.ehcache.configurationResourceName">ehcache.xml</property>-->
+   
+         
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        
+        <!--  use "create" to drop and re-create the schema and, 
+              "update" to mix the changes & "create" is used to create all tables every time
+          -->
+        <property name="hbm2ddl.auto">create</property>
+        
+        <!--  Names the annotated entity classes -->
+        <mapping class="org.obliquid.hibernate._01_create_read.UserDetail"/>
+        <mapping class="org.obliquid.hibernate._02_value_object.User2"/>
+        <mapping class="org.obliquid.hibernate._03_set.User3"/>
+        <mapping class="org.obliquid.hibernate._04_collection.User4"/>
+        
+        <mapping class="org.obliquid.hibernate._05_proxy_objects.User5"/>
+        
+        <mapping class="org.obliquid.hibernate._06_one_to_one.User6"/>
+        <mapping class="org.obliquid.hibernate._06_one_to_one.Vehicle6"/>
+        
+        <mapping class="org.obliquid.hibernate._07_one_to_many.User7"/>
+        <mapping class="org.obliquid.hibernate._07_one_to_many.Vehicle7"/>
+        
+        <mapping class="org.obliquid.hibernate._08_one_to_many_MappedBy.User8"/>
+        <mapping class="org.obliquid.hibernate._08_one_to_many_MappedBy.Vehicle8"/>
+        
+        <mapping class="org.obliquid.hibernate._09_many_to_many.User9"/>
+        <mapping class="org.obliquid.hibernate._09_many_to_many.Vehicle9"/>
+        
+        <mapping class="org.obliquid.hibernate._10_CascadeTypes_OtherThings.User10"/>
+        <mapping class="org.obliquid.hibernate._10_CascadeTypes_OtherThings.Vehicle10"/>
+        
+        <mapping class="org.obliquid.hibernate._11_CRUD_Operations.User11"/>
+        
+        <mapping class="org.obliquid.hibernate._12_Transient_Persistent_Detached.User12"/>
+        
+        <mapping class="org.obliquid.hibernate._13_Hibernate_Cache.User13"/>
+        
+        <mapping class="org.obliquid.hibernate._14_Hibernate_Query_Cache.User14"/>
+        
+        <mapping class="org.obliquid.hibernate._15_Inheritance.User15"/>
+        <mapping class="org.obliquid.hibernate._15_Inheritance.Vehicle15"/>
+        <mapping class="org.obliquid.hibernate._15_Inheritance.TwoWheeler"/>
+        <mapping class="org.obliquid.hibernate._15_Inheritance.FourWheeler"/>
+        
+        <mapping class="org.obliquid.hibernate._16_Inheritance_SingleTable.Vehicle16"/>
+        <mapping class="org.obliquid.hibernate._16_Inheritance_SingleTable.TwoWheeler16"/>
+        <mapping class="org.obliquid.hibernate._16_Inheritance_SingleTable.FourWheeler16"/>
+        
+          <mapping class="org.obliquid.hibernate._17_Inheritance_TablePerClass.Vehicle17"/>
+        <mapping class="org.obliquid.hibernate._17_Inheritance_TablePerClass.TwoWheeler17"/>
+        <mapping class="org.obliquid.hibernate._17_Inheritance_TablePerClass.FourWheeler17"/>
+        
+         <mapping class="org.obliquid.hibernate._18_Inheritance_Joined.Vehicle18"/>
+        <mapping class="org.obliquid.hibernate._18_Inheritance_Joined.TwoWheeler18"/>
+        <mapping class="org.obliquid.hibernate._18_Inheritance_Joined.FourWheeler18"/>
+        
+        
+        <mapping class="org.obliquid.hibernate._19_HQL_QueryObject.User19"/>
+        
+        <mapping class="org.obliquid.hibernate._20_Criteria_API.User20"/>
+        <mapping class="org.obliquid.hibernate._21_Query_by_Example.User21"/>
+        
+        
+    </session-factory>
+
+</hibernate-configuration>
